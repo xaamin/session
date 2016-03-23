@@ -1,0 +1,27 @@
+{
+    "name": "xaamin/session",
+    "description": "Session Wrapper",
+    "license": "MIT",
+    "keywords": [
+        "session",
+        "flashed session",
+        "flash session",        
+        "flashed",
+    ],
+    "authors": [
+        {
+            "name": "Benjamín Martínez Mateos",
+            "email": "bmxamin@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xaamin\\Session\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
