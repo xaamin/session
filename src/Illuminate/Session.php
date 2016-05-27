@@ -1,5 +1,5 @@
 <?php 
-namespace Xaamin\Session\Laravel;
+namespace Xaamin\Session\Illuminate;
 
 use Xaamin\Session\Contracts\SessionInterface;
 use Illuminate\Session\Store as SessionStore;
@@ -77,6 +77,14 @@ class Session implements SessionInterface
 	/**
      * {@inheritdoc}
      */
+	public function all()
+	{
+		return $this->session->all();
+	}
+
+	/**
+     * {@inheritdoc}
+     */
 	public function forget($index)
 	{
 		$this->session->forget($index);
@@ -85,8 +93,8 @@ class Session implements SessionInterface
 	/**
      * {@inheritdoc}
      */
-	public function all()
+	public function flush()
 	{
-		return $this->session->all();
+		$this->session->flush();
 	}
 }

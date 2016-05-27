@@ -50,6 +50,13 @@ interface SessionInterface
 	public function pull($index, $default = null);
 
 	/**
+	 * Get all stored session values.
+	 *
+	 * @return mixed
+	 */
+	public function all();
+
+	/**
 	 * Removes session from the store.
 	 *
 	 * @return void
@@ -57,9 +64,8 @@ interface SessionInterface
 	public function forget($index);
 
 	/**
-	 * Get all stored session values.
-	 *
-	 * @return mixed
+	 * Removes all session from the store
+	 * @return type
 	 */
-	public function all();
+	public function flush();
 }

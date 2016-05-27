@@ -101,14 +101,6 @@ class Session implements SessionInterface
 	/**
      * {@inheritdoc}
      */
-	public function forget($index)
-	{
-		$this->forgetSession($index);
-	}
-
-	/**
-     * {@inheritdoc}
-     */
 	public function all()
 	{
 		$values = array();
@@ -126,6 +118,22 @@ class Session implements SessionInterface
 		}
 
 		return !empty($values) ? $values : null;
+	}
+
+	/**
+     * {@inheritdoc}
+     */
+	public function forget($index)
+	{
+		$this->forgetSession($index);
+	}
+
+	/**
+     * {@inheritdoc}
+     */
+	public function flush()
+	{
+		$_SESSION[$this->flashnow] = $_SESSION[$this->flashnext] = 	$_SESSION[$this->key] = null;
 	}
 
 	/**
