@@ -11,11 +11,10 @@ class Cookie implements CookieInterface
      * @var array
      */
     protected $options = [
-        'name'      => 'Itnovado\Cookie',
         'domain'    => '',
         'path'      => '/',
         'secure'    => false,
-        'http_only' => false,
+        'http_only' => true,
     ];
 
     /**
@@ -73,7 +72,7 @@ class Cookie implements CookieInterface
         $cookies = [];
 
         foreach ($_COOKIE as $index => $value) {
-            if ($value = json_decode($value)) {
+            if ($value = unserialize($value)) {
                 $cookies[$index] = $value;
             }
         }
@@ -112,7 +111,7 @@ class Cookie implements CookieInterface
             $value = $_COOKIE[$index];
 
             if ($value) {
-                return json_decode($value);
+                return unserialize($value);
             }
         }
 
@@ -135,7 +134,7 @@ class Cookie implements CookieInterface
     {
         setcookie(
             $index,
-            json_encode($value),
+            serialize($value),
             $minutes,
             $path ? : $this->options['path'],
             $domain ? : $this->options['domain'],
