@@ -1,10 +1,10 @@
-<?php 
-namespace Xaamin\Session\Illuminate;
+<?php
+namespace Xaamin\Session\Laravel;
 
 use Xaamin\Session\Contracts\SessionInterface;
 use Illuminate\Session\Store as SessionStore;
 
-class Session implements SessionInterface 
+class Session implements SessionInterface
 {
 	/**
 	 * The key used in the Session.
@@ -17,7 +17,7 @@ class Session implements SessionInterface
 	 * Session store object.
 	 *
 	 * @var \Illuminate\Session\Store
-	 */	
+	 */
 	protected $session;
 
 	/**
@@ -65,7 +65,7 @@ class Session implements SessionInterface
 	{
 		return $this->session->get($index, $default);
 	}
-	
+
 	/**
      * {@inheritdoc}
      */

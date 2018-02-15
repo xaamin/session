@@ -1,5 +1,5 @@
 <?php
-namespace Xaamin\Session\Illuminate;
+namespace Xaamin\Session\Laravel;
 
 use Illuminate\Http\Request;
 use Illuminate\Cookie\CookieJar;
@@ -7,19 +7,6 @@ use Xaamin\Session\Contracts\CookieInterface;
 
 class Cookie implements CookieInterface
 {
-    /**
-     * The cookie options.
-     *
-     * @var array
-     */
-    protected $options = [
-        'name'      => 'ItnovadoCookie',
-        'domain'    => '',
-        'path'      => '/',
-        'secure'    => false,
-        'http_only' => false,
-    ];
-
     /**
      * Create a new cookie driver.
      *
